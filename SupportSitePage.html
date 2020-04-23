@@ -1,2 +1,20 @@
 <script src="https://flixbus--uat.lightning.force.com/lightning/lightning.out.js"></script>
+<script>
+            $Lightning.use("c:SupportSiteApp",    // name of the Lightning app
+                function() {                  // Callback once framework and app loaded
+                    $Lightning.createComponent(
+                        "c:showNavigationalTopics", // top-level component of your app
+                        { hostedExternally : true},                  // attributes to set on the component when created
+                        //"lightningLocator",   // the DOM location to insert the component
+                        "lwcLightning",
+                        function(cmp) {
+                            // callback when component is created and active on the page
+                          console.log("LWC component was created");
+                        }
+                    );
+                },
+                'https://uat-flixbus-partners.cs84.force.com/FlixHelp'  // Community endpoint
+            );
+        </script>
 <h1> Let's play with New Content Web Site <h1>
+  
