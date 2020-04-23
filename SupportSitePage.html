@@ -2,27 +2,28 @@
 
 <head>
     <script src="https://uat-flixbus-partners.cs84.force.com/FlixHelp/lightning/lightning.out.js"></script>
+    
+</head>
     <script>
         $Lightning.use("c:SupportSiteApp", // name of the Lightning app
             function() { // Callback once framework and app loaded
                 $Lightning.createComponent(
                     "c:showNavigationalTopics", // top-level component of your app
-                    //{ hostedExternally : true},                  // attributes to set on the component when created
-                    // "lightningLocator",   // the DOM location to insert the component
-                    "lwcLightning",
+                    { networkID : "0DB5E0000004UPU",
+                      showVerticalDiv : false},
+                    "lwcLightning", //DOM Id
                     function(cmp) {
                         // callback when component is created and active on the page
                         console.log("LWC component was created");
                     }
                 );
             },
-            'https://uat-flixbus-partners.cs84.force.com/FlixHelp' // Community endpoint
+            "https://uat-flixbus-partners.cs84.force.com/FlixHelp" // Community endpoint
         );
     </script>
-</head>
 
 <body>
-    <h3>Let's Play with the support Web Site</h3>
+    <h2>Let's Play with the support Site</h2>
 
     <div id="lwcLightning">
 
