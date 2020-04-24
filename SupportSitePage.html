@@ -20,6 +20,22 @@
             },
             "https://uat-flixbus-partners.cs84.force.com/FlixHelp" // Community endpoint
         );
+        
+        $Lightning.use("c:SupportSiteApp", // name of the Lightning app
+            function() { // Callback once framework and app loaded
+                $Lightning.createComponent(
+                    "c:ShowArticlesList", // top-level component of your app
+                    { recordId : "0TO5E000000VLc4WAG",
+                      langCode : "en_US"},
+                    "topicDetails", //DOM Id
+                    function(cmp) {
+                        // callback when component is created and active on the page
+                        console.log("LWC component was created");
+                    }
+                );
+            },
+            "https://uat-flixbus-partners.cs84.force.com/FlixHelp" // Community endpoint
+        );
     </script>
 
 <body>
@@ -28,6 +44,7 @@
     <div id="lwcLightning">
 
     </div>
+    <div id = "topicDetails"> </div>
 </body>
 
 </html>
