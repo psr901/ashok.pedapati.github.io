@@ -50,6 +50,21 @@
             },
             "https://uat-flixbus-partners.cs84.force.com/FlixHelp" // Community endpoint
         );
+        $Lightning.use("c:SupportSiteApp", // name of the Lightning app
+            function() { // Callback once framework and app loaded
+                $Lightning.createComponent(
+                    "c:CustomButtonComp", // top-level component of your app
+                    { title : "Contact us",
+                      url : "https://www.gmail.com"},
+                    "contactButton", //DOM Id
+                    function(cmp) {
+                        // callback when component is created and active on the page
+                        console.log("LWC component was created");
+                    }
+                );
+            },
+            "https://uat-flixbus-partners.cs84.force.com/FlixHelp" // Community endpoint
+        );
     </script>
 
 <body>
@@ -60,6 +75,7 @@
     </div>
     <div>
         <div id = "topicDetails"> </div>
+        <div id = "contactButton"></div>
         <div id = "verticalDiv"></div>
     </div>
 </body>
